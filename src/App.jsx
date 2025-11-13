@@ -10,6 +10,7 @@ export default function App() {
       <Navbar />
       <Firestore message={"team_members"}/>
       <Firestore message={"team_members"}/>
+      <Firestore message={"team_members"}/>
       <Footer />
       </>
     </div>
