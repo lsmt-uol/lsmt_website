@@ -1,18 +1,16 @@
-# React + Vite
+# LSMT WEBSITE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is Leeds Sustainable Marine Teams Website Repository
 
-Currently, two official plugins are available:
+## Git Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+git commit -m "test_1"  # noting the update
+git push # pushing the last update 
+git pull # pulling the latest update 
+git status # check if there is any need to push 
+git remote -v # shows the push and pull links 
+git add. # adds the whole project folder for push 
+git clone url-ofrepo.git # to clone and setup the repo for first time 
+git push -u origin main #helps to signin in with git hub 
+git config --global user.name # for the user name
+git config --global user.email# for the email
