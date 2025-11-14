@@ -4,7 +4,7 @@ This is Leeds Sustainable Marine Teams Website Repository
 
 ## Git Commands
 
-git commit -m "test_1"  # noting the update
+"git commit -m "test_1"  # noting the update"
 git push # pushing the last update 
 git pull # pulling the latest update 
 git status # check if there is any need to push 
