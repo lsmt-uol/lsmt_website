@@ -11,7 +11,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-black fixed top-0 left-0 w-full z-50 shadow-lg">
+    <header className="bg-slate-950 fixed top-0 left-0 w-full z-50 shadow-lg">
       <div className="max-w-7xl mx-auto h-14 sm:h-16 md:h-16 lg:h-16 flex items-center justify-center relative px-4 sm:px-6 lg:px-8">
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
           <div className="flex items-center space-x-2">
