@@ -43,11 +43,11 @@ export default function Header() {
       <nav aria-label="Global" className="mx-auto flex items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1 items-center space-x-3">
             <img
-              className="h-8 sm:h-9 md:h-10 lg:h-12"
+              className="h-11 w-17 sm:h-9 md:h-10 lg:h-12"
               src={logo1}
               alt="logo1"
             />
-            <span className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl">
+            <span className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-3xl">
               LSMT
             </span>
         </div>
@@ -76,21 +76,7 @@ export default function Header() {
                 hover:bg-white hover:text-blue-600">
             ABOUT US
           </a>
-          <a href="#" className="text-gray-300
-                text-sm sm:text-base md:text-base lg:text-lg
-                px-3 py-2 rounded-lg
-                transition-all duration-200
-                hover:bg-white hover:text-blue-600">
-            GALLERY
-          </a>
-          <a href="#" className="text-gray-300
-                text-sm sm:text-base md:text-base lg:text-lg
-                px-3 py-2 rounded-lg
-                transition-all duration-200
-                hover:bg-white hover:text-blue-600">
-            SPONSORS
-          </a>
-          <Popover className="relative">
+          {/* <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-gray-300
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
@@ -124,7 +110,28 @@ export default function Header() {
                 ))}
               </div>
             </PopoverPanel>
-          </Popover>
+          </Popover> */}
+          <a href="#" className="text-gray-300
+                text-sm sm:text-base md:text-base lg:text-lg
+                px-3 py-2 rounded-lg
+                transition-all duration-200
+                hover:bg-white hover:text-blue-600">
+            PROJECTS
+          </a>
+          <a href="#" className="text-gray-300
+                text-sm sm:text-base md:text-base lg:text-lg
+                px-3 py-2 rounded-lg
+                transition-all duration-200
+                hover:bg-white hover:text-blue-600">
+            OUR TEAM
+          </a>
+          <a href="#" className="text-gray-300
+                text-sm sm:text-base md:text-base lg:text-lg
+                px-3 py-2 rounded-lg
+                transition-all duration-200
+                hover:bg-white hover:text-blue-600">
+            SPONSORS
+          </a>
         </PopoverGroup>
 
       </nav>
@@ -137,7 +144,7 @@ export default function Header() {
               <span className="sr-only">Your Company</span>
               <img
                 alt="logo"
-                src={logo}
+                src={logo1}
                 className="h-8 w-10"
               />
             </a>
