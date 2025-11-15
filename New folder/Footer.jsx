@@ -55,7 +55,7 @@ const App = () => {
         <style>{`
             /* Set body background to transparent */
             body {
-                background-color: black;
+                background-color: transparent;
             }
             /* Remove background from the contact container */
             .contact-container {
