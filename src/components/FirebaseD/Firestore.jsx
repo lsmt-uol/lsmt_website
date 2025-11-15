@@ -1,12 +1,12 @@
 import { useEffect,useState } from "react";
-import {db} from "../config/firebase";
+import {db} from "../../config/firebase";
 import { getDocs, collection } from 'firebase/firestore';
 
 
-export default function Firestore({ message }){
+export default function Firestore({ collection }){
     const [ dbList, setdbList] = useState([]);
 
-    const dbCollectionRef = collection(db, message)
+    const dbCollectionRef = collection(db, collection)
 
     useEffect(() => {
         const getdbList = async () => {
