@@ -23,6 +23,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import logo from "../../assets/logo.jpg"
+import logo1 from "../../assets/logo.png"
+import hero from "../../assets/hero.jpg"
 
 const products = [
   { name: 'PALESTRA-1', description: 'RC Boat', href: '#', icon: ChartPieIcon },
@@ -34,13 +36,16 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-black-900">
+    // bg-[#001c37]
+    
+    <header className="bg-transparent">
+      
       <nav aria-label="Global" className="mx-auto flex items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1 items-center space-x-3">
             <img
               className="h-8 sm:h-9 md:h-10 lg:h-12"
-              src={logo}
-              alt="logo"
+              src={logo1}
+              alt="logo1"
             />
             <span className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl">
               LSMT
@@ -148,24 +153,6 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-white/10">
               <div className="space-y-2 py-6">
-                <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-white hover:bg-white/5">
-                    PROJECTS
-                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
-                  </DisclosureButton>
-                  <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-white hover:bg-white/5"
-                      >
-                        {item.name}
-                      </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
-                </Disclosure>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
@@ -184,6 +171,24 @@ export default function Header() {
                 >
                   SPONSORS
                 </a>
+                <Disclosure as="div" className="-mx-3">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-white hover:bg-white/5">
+                    PROJECTS
+                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    {[...products].map((item) => (
+                      <DisclosureButton
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-white hover:bg-white/5"
+                      >
+                        {item.name}
+                      </DisclosureButton>
+                    ))}
+                  </DisclosurePanel>
+                </Disclosure>
               </div>
             </div>
           </div>
