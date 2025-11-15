@@ -5,7 +5,7 @@ import { faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
 
-const App = () => {
+const Footer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form submitted!");
@@ -192,4 +192,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Footer;
