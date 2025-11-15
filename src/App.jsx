@@ -4,6 +4,7 @@ import Firestore from "./components/FirebaseD/Firestore";
 import Firestorage from "./components/FirebaseD/Firestorage";
 import Landing from"./components/layout/Landing"
 import Aboutus from "./components/layout/AboutUs";
+import Foo from "./components/layout/Foo";
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
       {/* <Header /> */}
       {/* <Firestore collection ="team_members"/> */}
       {/* <Firestorage path = "members/LSMT - Logo.png"/> */}
-      <Footer />
+      {/* <Footer /> */}
+      <Foo />
       </>
     </div>
   );
