@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { storage } from "../../config/firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 
-
+//changed the about us section
 
 export default function Aboutus() {
 
