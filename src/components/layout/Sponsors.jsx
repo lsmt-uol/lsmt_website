@@ -10,7 +10,7 @@ const Sponsors = () => {
     const principalSponsor = {
         name: 'Link to the sponsors website', 
         storagePath: 'sponsors/noimage.jpg', 
-        videoStoragePath: 'sponsors/loopvideo.mp4', // Confirmed video path
+        videoStoragePath: 'sponsors/loopvideo.mp4', 
         websiteUrl: 'link', 
         description: "Description about our sponsor",
     };
@@ -19,7 +19,7 @@ const Sponsors = () => {
         const fetchUrls = async () => {
             if (!storage) return;
 
-            // Fetch Logo URL
+            
             try {
                 const logoRef = ref(storage, principalSponsor.storagePath);
                 const logoUrl = await getDownloadURL(logoRef);
@@ -28,7 +28,7 @@ const Sponsors = () => {
                 console.error("Error fetching logo URL:", error);
             }
             
-            // Fetch Video URL
+            
             try {
                 const videoRef = ref(storage, principalSponsor.videoStoragePath);
                 const videoUrl = await getDownloadURL(videoRef);
@@ -42,10 +42,10 @@ const Sponsors = () => {
     }, [storage, principalSponsor.storagePath, principalSponsor.videoStoragePath]);
 
     return (
-        // 🔑 CONTAINER FOR VIDEO BACKGROUND: Use relative positioning
+    
         <section className="min-h-screen bg-black text-white py-20 px-4 relative">
             
-            {/* 🔑 VIDEO BACKGROUND ELEMENT: Absolute positioning */}
+
             {fetchedVideoUrl && (
                 <video 
                     className="absolute inset-0 w-full h-full object-cover z-0"
@@ -59,10 +59,10 @@ const Sponsors = () => {
                 </video>
             )}
 
-            {/* 🔑 OVERLAY TO INCREASE READABILITY (optional, but recommended) */}
+            
             <div className="absolute inset-0 w-full h-full bg-black opacity-70 z-0"></div>
 
-            {/* CONTENT CONTAINER: Must have z-index higher than video */}
+          
             <div className="max-w-4xl mx-auto text-center relative z-10">
                 
                 <h1 className="text-4xl font-extrabold mb-12 tracking-tight">
