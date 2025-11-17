@@ -73,7 +73,7 @@ const Sponsors = () => {
                     
                     <p className="text-lg font-semibold uppercase tracking-widest mb-6">
                         <span className="text-yellow-600">Bronze</span> 
-                        <span className="text-gray-200"> Silver</span>   
+                        <span className="text-gray-200"> Silver</span>  
                         <span className="text-yellow-500"> Gold</span> 
                         <span className="text-white"> (for each sponsor we will just keep one of them)</span> 
                     </p>
