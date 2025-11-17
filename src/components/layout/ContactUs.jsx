@@ -53,7 +53,7 @@ const contact = () => {
 
 
     return (
-        <div className="flex flex-col items-center justify-start font-sans p-8 md:p-16 bg-[#020716]">            
+        <div className="flex flex-col items-center justify-start font-sans p-8 md:p-16 bg-[#0a0f1c]">            
             <div id="messageBox" className="hidden fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white p-3 rounded-lg shadow-xl z-50 transition duration-300">
                 
             </div>
@@ -61,7 +61,7 @@ const contact = () => {
             <div className="contact-container max-w-5xl w-full p-8 sm:p-12">
                 
                 <h1 className="text-4xl sm:text-5xl font-bold text-center uppercase tracking-wide mb-16 text-white">
-                    CONTACT OUR TEAM
+                    GET IN TOUCH
                 </h1>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-gray-300">

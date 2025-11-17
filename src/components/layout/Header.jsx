@@ -69,7 +69,7 @@ export default function Header({homeRef, aboutRef, projectsref, ourTeamRef, spon
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
-                hover:bg-white hover:text-blue-600">
+                 hover:text-[#00a7f5]">
             HOME
           </button>
           <button  onClick={() => scrollTo(aboutRef)}

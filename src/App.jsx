@@ -7,6 +7,7 @@ import Sponsors from "./components/layout/Sponsors"
 import Contactus from "./components/layout/ContactUs";
 import Footer from "./components/layout/Footer";
 import { useRef } from "react";
+import Conta from "./components/layout/conta";
 
 export default function App() {
   const homeRef = useRef(null);
@@ -19,7 +20,8 @@ export default function App() {
   return (
     <div className="overflow-hidden">
       <>
-      <div>
+      
+      <div ref={homeRef}>
         <Landing
         homeRef={homeRef}
         aboutRef={aboutRef}
@@ -31,9 +33,12 @@ export default function App() {
 
       <div ref={aboutRef}><Aboutus /></div>
       <div ref={sponsorsRef}><Sponsors /></div>
+      {/* <Conta/> */}
       <div ref={contactRef}><Contactus /></div>
-      <Foo/>
-      {/* <Footer /> */}
+
+      {/* <Foo/> */}
+      <Footer />
+
       </>
     </div>
   );

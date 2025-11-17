@@ -16,7 +16,7 @@ export default function Aboutus() {
     }, []);
 
     return (
-        <section className="w-full bg-black h-fit py-3 flex flex-wrap md:flex-row-reverse flex-col md:items-stretch"> 
+        <section className="w-full bg-[#0a0f1c] h-fit py-3 flex flex-wrap md:flex-row-reverse flex-col md:items-stretch"> 
             <div className="md:w-1/2 w-full h-full ">
                 <img
                     src={aboutImage}
@@ -29,6 +29,7 @@ export default function Aboutus() {
                 
                 <h1 className="text-white font-semibold text-2xl text-center">ABOUT US</h1>
                 <div className="bg-blue-500 w-full h-0.5 my-2"></div>
+
                 
                 <div className="flex flex-col justify-between grow">
                     

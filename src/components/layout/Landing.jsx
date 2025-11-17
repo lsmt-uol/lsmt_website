@@ -9,7 +9,8 @@ export default function Landing({homeRef, aboutRef, projectsref, ourTeamRef, spo
     <div
       className=" min-h-screen 
         w-full
-        bg-cover bg-no-repeat 
+        bg-cover
+        bg-no-repeat 
         bg-center      /* default for mobile */
         sm:bg-center   /* small screens */
         md:bg-top      /* tablet */
