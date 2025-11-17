@@ -43,7 +43,7 @@ const Sponsors = () => {
 
     return (
     
-        <section className="min-h-screen bg-black text-white py-20 px-4 relative">
+        <section className="min-h-screen bg-black text-white py-20 px-4 relative font-sans">
             
 
             {fetchedVideoUrl && (
@@ -60,20 +60,21 @@ const Sponsors = () => {
             )}
 
             
+            
             <div className="absolute inset-0 w-full h-full bg-black opacity-70 z-0"></div>
 
-          
+            
             <div className="max-w-4xl mx-auto text-center relative z-10">
                 
-                <h1 className="text-4xl font-extrabold mb-12 tracking-tight">
+                <h1 className="text-4xl sm:text-5xl font-extrabold mb-12 tracking-tighter uppercase">
                     Our Valued Partners
                 </h1>
                 
                 <div className="bg-transparent p-8 sm:p-12 rounded-xl shadow-2xl border border-white">
                     
-                    <p className="text-lg font-semibold uppercase tracking-widest mb-6">
+                    <p className="text-sm font-normal uppercase tracking-widest mb-6">
                         <span className="text-yellow-600">Bronze</span> 
-                        <span className="text-gray-200"> Silver</span>  
+                        <span className="text-gray-200"> Silver</span>  
                         <span className="text-yellow-500"> Gold</span> 
                         <span className="text-white"> (for each sponsor we will just keep one of them)</span> 
                     </p>
@@ -98,7 +99,7 @@ const Sponsors = () => {
                         </div>
                     )}
                     
-                    <p className="text-base sm:text-lg text-white leading-relaxed mb-8">
+                    <p className="text-lg text-white font-light leading-relaxed mb-8">
                         {principalSponsor.description}
                     </p>
 
@@ -106,7 +107,7 @@ const Sponsors = () => {
                         href={principalSponsor.websiteUrl}
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="inline-block px-8 py-3 text-base font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600 transition duration-300 shadow-xl"
+                        className="inline-block px-8 py-3 text-base font-medium text-white border border-white rounded-lg hover:bg-white hover:text-black transition duration-300 tracking-wide"
                     >
                         Explore Their Website
                     </a>
@@ -114,15 +115,15 @@ const Sponsors = () => {
                 </div>
                 
                 <div className="mt-20 pt-10 border-t border-gray-700">
-                    <h2 className="text-2xl font-bold text-white mb-4">
+                    <h2 className="text-4xl font-extrabold text-white mb-4 tracking-tighter">
                         Interested in Partnership?
                     </h2>
-                    <p className="text-white mb-6 max-w-2xl mx-auto">
+                    <p className="text-lg text-white mb-6 max-w-2xl mx-auto font-light leading-relaxed">
                         We have different partnerships available.
                     </p>
                     <a 
                         href="#" 
-                        className="px-6 py-3 border-2 border-amber-400  text-amber-400  rounded-full font-medium hover:bg-sky-500 hover:border-sky-500 hover:text-white transition duration-300"
+                        className="px-6 py-3 border-2 border-amber-400 text-amber-400 rounded-full font-medium hover:bg-sky-500 hover:border-sky-500 hover:text-white transition duration-300 tracking-wide"
                     >
                         Learn How to Become a Partner (brochure link)
                     </a>
