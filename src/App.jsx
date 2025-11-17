@@ -5,6 +5,7 @@ import Firestorage from "./components/FirebaseD/Firestorage";
 import Landing from"./components/layout/Landing"
 import Aboutus from "./components/layout/AboutUs";
 import Foo from "./components/layout/Foo";
+import Sponsors from "./components/layout/Sponsors"
 import Contactus from "./components/layout/ContactUs";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       {/* <Firestore collection ="team_members"/> */}
       {/* <Firestorage path = "members/LSMT - Logo.png"/> */}
       {/* <Footer /> */}
+      <Sponsors />
       <Contactus />
       <Footer />
       </>
