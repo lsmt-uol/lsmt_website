@@ -50,68 +50,10 @@ const contact = () => {
         { Icon: Instagram, label: 'Instagram', colorClass: 'hover:text-pink-500', id: 'instagram', href: '#' },
     ];
 
-    const CustomStyles = () => (
-        <style>{`
-            /* Set body background to transparent */
-            body {
-                background-color: black;
-            }
-            /* Remove background from the contact container */
-            .contact-container {
-                background-color: transparent;
-                box-shadow: none;
-                border-radius: 0;
-            }
-            /* Input and icon styles remain the same for white text/borders */
-            .dark-input {
-                width: 100%;
-                background-color: transparent;
-                border: none;
-                border-bottom: 2px solid #ffffff; 
-                color: #ffffff; 
-                padding-bottom: 8px;
-                font-size: 1rem;
-                transition: border-color 0.2s;
-            }
-            .dark-input:focus {
-                outline: none;
-                border-bottom-color: #38bdf8; 
-            }
-            .dark-input::placeholder {
-                color: rgba(255, 255, 255, 0.7);
-            }
-            .dark-textarea {
-                height: 120px;
-                resize: none;
-            }
-            .icon-box {
-                border: 1px solid #ffffff; 
-                padding: 10px;
-                line-height: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .icon-box svg {
-                color: #ffffff; 
-            }
-            
-            .clickable-item:hover .contact-text {
-                color: #38bdf8; 
-            }
-            .clickable-item:hover .icon-box {
-                border-color: #38bdf8; 
-            }
-            .clickable-item:hover .icon-box svg {
-                color: #38bdf8; 
-            }
-        `}</style>
-    );
+
 
     return (
-        <div className="flex flex-col items-center justify-start font-sans p-8 md:p-16">
-             <CustomStyles />
-            
+        <div className="flex flex-col items-center justify-start font-sans p-8 md:p-16 bg-[#020716]">            
             <div id="messageBox" className="hidden fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white p-3 rounded-lg shadow-xl z-50 transition duration-300">
                 
             </div>
@@ -129,17 +71,17 @@ const contact = () => {
                             
                             <div>
                                 <label htmlFor="name" className="block text-sm uppercase font-bold mb-2 text-white">Name</label>
-                                <input type="text" id="name" className="dark-input" required />
+                                <input type="text" size="55" id="name" className="border rounded-[5px]" placeholder=" Enter your Name" required />
                             </div>
 
                             <div>
                                 <label htmlFor="email" className="block text-sm uppercase font-bold mb-2 text-white">Email</label>
-                                <input type="email" id="email" className="dark-input" required />
+                                <input type="email" size="55" id="email" className="border rounded-[5px]" placeholder=" Enter your E-Mail" required />
                             </div>
 
                             <div>
                                 <label htmlFor="message" className="block text-sm uppercase font-bold mb-2 text-white">Message</label>
-                                <textarea id="message" className="dark-input dark-textarea" required></textarea>
+                                <textarea id="message" rows="5" cols="57" className="border rounded-[5px]" required></textarea>
                             </div>
 
                             <button type="submit" className="w-full py-3 mt-4 text-white font-bold rounded-md transition duration-300 bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-4 focus:ring-sky-500 focus:ring-opacity-50">
@@ -167,8 +109,6 @@ const contact = () => {
                                 </a>
                             ))}
                         </div>
-
-                       
                     </div>
                 </div>
             </div>

@@ -28,7 +28,6 @@ export default function Aboutus() {
             <div className="md:w-1/2 w-full h-full pt-8 px-6 pb-1 overflow-hidden flex flex-col">
                 
                 <h1 className="text-white font-semibold text-2xl text-center">ABOUT US</h1>
-                
                 <div className="bg-blue-500 w-full h-0.5 my-2"></div>
                 
                 <div className="flex flex-col justify-between grow">

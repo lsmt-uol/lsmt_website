@@ -16,7 +16,7 @@ const Footer = () => {
 
     return (
         
-        <footer className="bg-black text-white p-8 sm:p-12">
+        <footer className="bg-[#020716] text-white p-8 sm:p-12">
             <div className="max-w-6xl mx-auto flex flex-col items-center">
                 
                
