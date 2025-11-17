@@ -158,7 +158,7 @@ const contact = () => {
                                     target={target || '_self'}
                                     className={`flex items-${align} space-x-4 clickable-item transition duration-150 text-white hover:text-sky-500`}
                                 >
-                                    <div className="icon-box rounded-md flex-shrink-0 transition duration-150">
+                                    <div className="icon-box rounded-md shrink-0 transition duration-150">
                                         <Icon className="w-5 h-5" />
                                     </div>
                                     <span className="text-white contact-text transition duration-150 text-base">

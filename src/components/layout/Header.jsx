@@ -32,9 +32,11 @@ const products = [
   { name: 'HERMES', description: 'LSMT Full Scale Boat', href: '#', icon: FingerPrintIcon },
 ]
 
-export default function Header() {
+export default function Header({homeRef, aboutRef, projectsref, ourTeamRef, sponsorsRef, contactRef}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+  const scrollTo = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     // bg-[#001c37]
     
@@ -55,27 +57,29 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
         <PopoverGroup className="hidden items-center lg:flex lg:gap-x-12">
-          <a href="#" className="text-gray-300
+          <button onClick={() => scrollTo(homeRef)}
+                className="text-white
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
                 hover:bg-white hover:text-blue-600">
             HOME
-          </a>
-          <a href="#" className="text-gray-300
+          </button>
+          <button  onClick={() => scrollTo(aboutRef)}
+               className="text-white
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
                 hover:bg-white hover:text-blue-600">
             ABOUT US
-          </a>
+          </button>
           {/* <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-gray-300
                 text-sm sm:text-base md:text-base lg:text-lg
@@ -111,27 +115,36 @@ export default function Header() {
               </div>
             </PopoverPanel>
           </Popover> */}
-          <a href="#" className="text-gray-300
+          <button onClick={() => scrollTo(projectsref)}
+                className="text-white
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
                 hover:bg-white hover:text-blue-600">
             PROJECTS
-          </a>
-          <a href="#" className="text-gray-300
+          </button>
+          <button onClick={() => scrollTo(ourTeamRef)}
+                className="text-white
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
                 hover:bg-white hover:text-blue-600">
             OUR TEAM
-          </a>
-          <a href="#" className="text-gray-300
-                text-sm sm:text-base md:text-base lg:text-lg
+          </button>
+          <button onClick={() => scrollTo(sponsorsRef) }
+                className="text-white text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
                 hover:bg-white hover:text-blue-600">
             SPONSORS
-          </a>
+          </button>
+          <button onClick={() => scrollTo(contactRef) }
+                className="text-white text-sm sm:text-base md:text-base lg:text-lg
+                px-3 py-2 rounded-lg
+                transition-all duration-200
+                hover:bg-white hover:text-blue-600">
+            CONTACT US
+          </button>
         </PopoverGroup>
 
       </nav>
@@ -148,37 +161,69 @@ export default function Header() {
                 className="h-8 w-10"
               />
             </a>
-            <button
+            <button 
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-400"
+              className="-m-2.5 rounded-md p-2.5 text-white"
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="size-6" />
+              <XMarkIcon aria-hidden="true" className="size-6
+              text-white" />
             </button>
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-white/10">
               <div className="space-y-2 py-6">
-                <a
-                  href="#"
+                <button onClick={() => {
+                  scrollTo(homeRef);
+                  setMobileMenuOpen(false);
+                } }
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                 >
                   HOME
-                </a>
-                <a
-                  href="#"
+                </button>
+                <button onClick={() => {
+                  scrollTo(aboutRef);
+                  setMobileMenuOpen(false);
+                } }
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                 >
                   ABOUT US
-                </a>
-                <a
-                  href="#"
+                </button>
+                <button onClick={() => {
+                  scrollTo(projectsref);
+                  setMobileMenuOpen(false);
+                }}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                >
+                  PROJECTS
+                </button>
+                <button onClick={() => {
+                  scrollTo(ourTeamRef);
+                  setMobileMenuOpen(false);
+                } }
+                  
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                >
+                  OUR TEAM
+                </button>
+                <button onClick={() => {
+                  scrollTo(sponsorsRef);
+                  setMobileMenuOpen(false);
+                } }
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                 >
                   SPONSORS
-                </a>
-                <Disclosure as="div" className="-mx-3">
+                </button>
+                <button onClick={() => {
+                  scrollTo(contactRef);
+                  setMobileMenuOpen(false);
+              } }
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                >
+                  CONTACT US
+                </button>
+                {/* <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-white hover:bg-white/5">
                     PROJECTS
                     <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
@@ -195,7 +240,7 @@ export default function Header() {
                       </DisclosureButton>
                     ))}
                   </DisclosurePanel>
-                </Disclosure>
+                </Disclosure> */}
               </div>
             </div>
           </div>

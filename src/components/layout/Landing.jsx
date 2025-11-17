@@ -3,7 +3,7 @@ import Header from "./Header";
 
 
 
-export default function Landing(){
+export default function Landing({homeRef, aboutRef, projectsref, ourTeamRef, sponsorsRef, contactRef}){
     return(
 
     <div
@@ -17,8 +17,13 @@ export default function Landing(){
         "
       style={{ backgroundImage: `url(${hero})` }}
     >
-      <Header />
-      {/* other content */}
+      <Header
+        homeRef={homeRef}
+        aboutRef={aboutRef}
+        projectsref={projectsref}
+        ourTeamRef={ourTeamRef} 
+        sponsorsRef={sponsorsRef}
+        contactRef={contactRef}/>
     </div>
 
 
