@@ -56,7 +56,7 @@ export default function Landing({
     >
 
       {/* 🔥 Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[4px] bg-transparent z-[60]">
+      <div className="fixed top-0 left-0 w-full h-1 bg-transparent z-60">
         <div
           className="h-full transition-all duration-10 bg-[#3b82f5]"
           style={{ width: `${scrollProgress}%` }}
@@ -106,7 +106,7 @@ export default function Landing({
           onClick={scrollToTop}
           className="
             fixed bottom-8 right-8
-            p-3 z-[60]
+            p-3 z-60
             rounded-full
             bg-black/50
             backdrop-blur-md
