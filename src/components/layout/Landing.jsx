@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import hero from "../../assets/hero.jpg";
 import Header from "./Header";
+import { getDownloadURL, ref } from "firebase/storage";
+import { storage } from "../../config/firebase";
 
 export default function Landing({
   homeRef,
@@ -12,6 +14,14 @@ export default function Landing({
 }) {
   const [showScrollUp, setShowScrollUp] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const storageRef1 = ref(storage, `landing/hero.jpg`);
+  const [aboutImage, setAboutImage] = useState("");
+  
+  useEffect(() => {
+      getDownloadURL(storageRef1).then((url) => {
+          setAboutImage(url);
+            });
+        }, []);
 
   const scrollToAbout = () => {
     aboutRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -52,7 +62,10 @@ export default function Landing({
         md:bg-top
         lg:bg-center
       "
-      style={{ backgroundImage: `url(${hero})` }}
+      style={{
+        backgroundImage: `url(${hero || aboutImage})`
+      }}
+
     >
 
       {/* 🔥 Scroll Progress Bar */}
