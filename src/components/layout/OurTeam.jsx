@@ -75,33 +75,50 @@ export default function OurTeam() {
   }, [members]);
 
   // Sorting logic (Director > Chiefs > Others)
-  const sortMembers = (arr) => {
-    return arr.slice().sort((a, b) => {
-      const aIsDirector = a.role === "Team Director";
-      const bIsDirector = b.role === "Team Director";
-      const aIsChief = a.role?.startsWith("Chief");
-      const bIsChief = b.role?.startsWith("Chief");
+// Sorting logic (Director > Academic Supervisor > Chiefs > Others)
+const sortMembers = (arr) => {
+  return arr.slice().sort((a, b) => {
+    const aRole = a.role || "";
+    const bRole = b.role || "";
 
-      // Special rule: Design department — Chief first even above Team Director
-      const aIsDesign = a.dept === "design";
-      const bIsDesign = b.dept === "design";
+    const aIsDirector = aRole === "Team Director";
+    const bIsDirector = bRole === "Team Director";
 
-      if (aIsDesign && bIsDesign) {
-        if (aIsChief && !bIsChief) return -1;
-        if (!aIsChief && bIsChief) return 1;
-        if (aIsDirector && !bIsDirector) return 1; // Director comes after Chief in design dept
-        if (!aIsDirector && bIsDirector) return -1;
-      }
+    const aIsAcademic = aRole === "Team Academic Supervisor";
+    const bIsAcademic = bRole === "Team Academic Supervisor";
 
-      // GLOBAL ordering (outside design dept)
+    const aIsChief = aRole.startsWith("Chief");
+    const bIsChief = bRole.startsWith("Chief");
+
+    const aIsDesign = a.dept === "design";
+    const bIsDesign = b.dept === "design";
+
+    // 🟦 Special Design Department Ordering
+    if (aIsDesign && bIsDesign) {
       if (aIsDirector && !bIsDirector) return -1;
       if (!aIsDirector && bIsDirector) return 1;
+
+      if (aIsAcademic && !bIsAcademic) return -1;
+      if (!aIsAcademic && bIsAcademic) return 1;
+
       if (aIsChief && !bIsChief) return -1;
       if (!aIsChief && bIsChief) return 1;
+    }
 
-      return a.name.localeCompare(b.name);
-    });
-  };
+    // 🟥 Global Ordering
+    if (aIsDirector && !bIsDirector) return -1;
+    if (!aIsDirector && bIsDirector) return 1;
+
+    if (aIsAcademic && !bIsAcademic) return -1;
+    if (!aIsAcademic && bIsAcademic) return 1;
+
+    if (aIsChief && !bIsChief) return -1;
+    if (!aIsChief && bIsChief) return 1;
+
+    return a.name.localeCompare(b.name);
+  });
+};
+
 
   // Filtering
   const filtered = useMemo(() => {
@@ -112,6 +129,7 @@ export default function OurTeam() {
         members.filter(
           (m) =>
             m.role === "Team Director" ||
+            m.role === "Team Academic Supervisor" ||
             m.role?.startsWith("Chief")
         )
       );
