@@ -22,14 +22,18 @@ export default function Conta() {
 
               {/* CARD */}
               <div className="absolute bottom-0 w-full lg:p-10 p-5">
-                <div className="bg-gradient-to-t from-gray-900 via-black to-gray-900 rounded-xl p-6 w-full">
+                <div className="bg-gradient-to-b from-gray-900 via-black to-gray-900 rounded-xl p-6 w-full">
                   
                   {/* PHONE */}
                   <div className="flex items-center mb-6">
                     <svg width="26" height="26" fill="none" stroke="#3b82f5" strokeWidth="2" viewBox="0 0 30 30">
                       <path d="M22.3 18.3c-.3-.1-.4-.2-.6-.2-.2 0-.3 0-.6.1l-3.3.7c-.4.1-.6.1-.8.1-.2 0-.4-.1-.7-.3-2.5-1.4-4.2-3-5.2-5.3-.1-.2-.2-.4-.3-.6 0-.2 0-.4.1-.7l.6-3.4c0-.3.1-.4 0-.6 0-.2-.1-.3-.2-.7l-.9-2.3c-.2-.7-.3-1-.5-1.1-.3-.2-.6-.2-1.4-.2H5.9C4.6 3.8 3.6 4.8 3.8 6c.5 3.1 1.9 8.8 6 12.9 4.3 4.3 10.4 6.1 13.8 6.9 1.3.3 2.5-.7 2.5-2v-2.5c0-.7 0-1.1-.2-1.4-.2-.3-.5-.4-1.2-.7l-2.4-.9z"/>
                     </svg>
-                    <p className="text-white text-base ml-4">+44 ------------</p>
+                    
+                    <p className="text-white text-base ml-4">
+                      <a href="tel:+44">+44 ----- ----- </a>
+
+                    </p>
                   </div>
 
                   {/* EMAIL */}
@@ -39,7 +43,7 @@ export default function Conta() {
                       <path d="M12.5 25h5c4.7 0 7 0 8.5-1.5S27.5 19.7 27.5 15c0-4.7 0-7-1.5-8.5S22.2 5 17.5 5h-5C7.8 5 5.4 5 3.9 6.5S2.5 10.3 2.5 15c0 4.7 0 7 1.4 8.5C5.4 25 7.8 25 12.5 25z"/>
                     </svg>
                     <p className="text-white text-base ml-4 break-all">
-                      leedssustainablemarineteam@gmail.com
+                      <a href="mailto:leedssustainablemarineteam@gmail.com">leedssustainablemarineteam@gmail.com</a> 
                     </p>
                   </div>
 
@@ -50,7 +54,9 @@ export default function Conta() {
                       <circle cx="15" cy="11.6" r="2.9"/>
                     </svg>
                     <p className="text-white text-base ml-4 break-all">
+                      <a href="https://maps.app.goo.gl/oAVNFS6jgtKcCtk87" target="_blank">
                       Leeds University, Leeds, LS3 1LN
+                      </a>
                     </p>
                   </div>
 
@@ -60,7 +66,7 @@ export default function Conta() {
           </div>
 
           {/* FORM */}
-          <div className="order-1 lg:order-2 bg-linear-to-t from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
+          <div className="order-1 lg:order-2 bg-gradient-to-b from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
             
             <input className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
             

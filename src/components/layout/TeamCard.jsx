@@ -14,7 +14,7 @@ export default function TeamCard({ name, role, imageUrl, linkedin }) {
           />
         ) : (
           <div className="text-gray-300 text-sm px-4">
-            No image available
+            {name}
           </div>
         )}
       </div>
