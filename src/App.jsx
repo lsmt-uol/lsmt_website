@@ -3,9 +3,7 @@ import AboutUs from "./components/layout/AboutUs";
 import OurTeam from "./components/layout/OurTeam";
 import Sponsors from "./components/layout/Sponsors"
 import Conta from "./components/layout/conta";
-import Contactus from "./components/layout/ContactUs";
 import Foo from "./components/layout/Foo";
-import Footer from "./components/layout/Footer";
 import { useRef } from "react";
 
 export default function App() {
