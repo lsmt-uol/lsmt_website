@@ -2,8 +2,8 @@ import Landing from"./components/layout/Landing"
 import AboutUs from "./components/layout/AboutUs";
 import OurTeam from "./components/layout/OurTeam";
 import Sponsors from "./components/layout/Sponsors"
-import Conta from "./components/layout/conta";
-import Foo from "./components/layout/Foo";
+import ContactUs from "./components/layout/ContactUs";
+import Footer from "./components/layout/Footer";
 import { useRef } from "react";
 
 export default function App() {
@@ -28,11 +28,12 @@ export default function App() {
         contactRef={contactRef}/>
       </div>
       <div ref={aboutRef}><AboutUs /></div>
+      {/* <div ref={projectsRef}><Projects /></div> */}
       <div ref={ourTeamRef}><OurTeam /></div>
       {/* <div ref={sponsorsRef}><Sponsors /></div> */}
-      <div ref={contactRef}><Conta/></div>
+      <div ref={contactRef}><ContactUs/></div>
 
-      <Foo
+      <Footer
       homeRef={homeRef}
       aboutRef={aboutRef}
       projectsref={projectsref}
