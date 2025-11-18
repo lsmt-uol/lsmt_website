@@ -2,32 +2,39 @@ import { useEffect, useState } from "react";
 import hero from "../../assets/hero.jpg";
 import Header from "./Header";
 
-export default function Landing({ homeRef, aboutRef, projectsref, ourTeamRef, sponsorsRef, contactRef }) {
+export default function Landing({
+  homeRef,
+  aboutRef,
+  projectsref,
+  ourTeamRef,
+  sponsorsRef,
+  contactRef,
+}) {
   const [showScrollUp, setShowScrollUp] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const scrollToAbout = () => {
-    if (aboutRef?.current) {
-      aboutRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    aboutRef?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToTop = () => {
-    if (homeRef?.current) {
-      homeRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Detect scroll position
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight * 0.4) {
-        setShowScrollUp(true);
-      } else {
-        setShowScrollUp(false);
-      }
+      const scrollTop = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+
+      const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setScrollProgress(Math.min(Math.max(scrollPercent, 0), 100));
+
+      setShowScrollUp(scrollTop > windowHeight * 0.4);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -47,6 +54,15 @@ export default function Landing({ homeRef, aboutRef, projectsref, ourTeamRef, sp
       "
       style={{ backgroundImage: `url(${hero})` }}
     >
+
+      {/* 🔥 Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-[4px] bg-transparent z-[60]">
+        <div
+          className="h-full transition-all duration-10 bg-[#3b82f5]"
+          style={{ width: `${scrollProgress}%` }}
+        ></div>
+      </div>
+
       <Header
         homeRef={homeRef}
         aboutRef={aboutRef}
@@ -56,7 +72,7 @@ export default function Landing({ homeRef, aboutRef, projectsref, ourTeamRef, sp
         contactRef={contactRef}
       />
 
-      {/* Floating Scroll Arrow - DOWN */}
+      {/* ↓ Scroll Down Arrow */}
       <button
         onClick={scrollToAbout}
         className="
@@ -84,20 +100,20 @@ export default function Landing({ homeRef, aboutRef, projectsref, ourTeamRef, sp
         </svg>
       </button>
 
-      {/* Floating Scroll Arrow - UP */}
+      {/* ↑ Scroll to Top Button */}
       {showScrollUp && (
         <button
           onClick={scrollToTop}
           className="
-          fixed bottom-8 right-8
-          p-3 z-50
-          rounded-full
-          bg-black/50
-          backdrop-blur-md
-          hover:bg-black/70
-          shadow-[0_0_25px_rgba(255,255,255,0.4),0_0_12px_rgba(255,255,255,0.8)]
-          transition
-        "
+            fixed bottom-8 right-8
+            p-3 z-[60]
+            rounded-full
+            bg-black/50
+            backdrop-blur-md
+            hover:bg-black/70
+            shadow-[0_0_25px_rgba(255,255,255,0.4),0_0_12px_rgba(255,255,255,0.8)]
+            transition
+          "
           aria-label="Scroll to Top"
         >
           <svg

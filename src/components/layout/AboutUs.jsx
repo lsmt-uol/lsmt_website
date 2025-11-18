@@ -18,7 +18,7 @@ export default function AboutUs(){
                 <div class="w-full flex-col  lg:items-start  gap-10 inline-flex">
                     <div class="w-full flex-col  gap-4 flex">
                         <h2 className="text-4xl font-bold text-[#3b82f5] text-center">ABOUT US</h2>
-                        <div className="bg-white w-60 h-0.5 mx-auto my-2 "></div>
+                        <div className="bg-white w-60 h-0.5 mx-auto "></div>
                         {/* <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">Building Stronger Communities through Collaboration and Empowerment</h2> */}
                         {/* <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">Through collaborationperse perspectives and strengths are leveraged to create inclusive environments where everyone has the opportunity to thrive. This approach not only fosters personal growth and achievement but also strengthens the fabric of society.</p> */}
                         <p className="text-white m-0 mt-3 font-bold text-base font-sans leading-relaxed lg:text-start text-center">
