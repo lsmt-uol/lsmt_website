@@ -121,7 +121,7 @@ export default function OurTeam() {
   }, [members, activeDept]);
 
   return (
-    <section className="py-26 bg-gradient-to-t from-gray-900 via-black to-gray-900">
+    <section className="py-26 bg-linear-to-t from-gray-900 via-black to-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-[#3b82f5]">OUR TEAM</h2>

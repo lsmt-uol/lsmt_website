@@ -1,7 +1,5 @@
-import Firestore from "./components/FirebaseD/Firestore";
-import Firestorage from "./components/FirebaseD/Firestorage";
 import Landing from"./components/layout/Landing"
-import Aboutus from "./components/layout/AboutUs";
+import AboutUs from "./components/layout/AboutUs";
 import OurTeam from "./components/layout/OurTeam";
 import Sponsors from "./components/layout/Sponsors"
 import Conta from "./components/layout/conta";
@@ -31,10 +29,9 @@ export default function App() {
         sponsorsRef={sponsorsRef}
         contactRef={contactRef}/>
       </div>
-
-      <div ref={aboutRef}><Aboutus /></div>
+      <div ref={aboutRef}><AboutUs /></div>
       <div ref={ourTeamRef}><OurTeam /></div>
-      <div ref={sponsorsRef}><Sponsors /></div>
+      {/* <div ref={sponsorsRef}><Sponsors /></div> */}
       <div ref={contactRef}><Conta/></div>
       {/* <div ref={contactRef}><Contactus /></div> */}
 

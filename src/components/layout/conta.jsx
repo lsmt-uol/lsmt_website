@@ -1,6 +1,6 @@
 export default function Conta() {
   return (
-    <section className="py-18 bg-gradient-to-t from-gray-900 via-black to-gray-900">
+    <section className="py-18 bg-linear-to-t from-gray-900 via-black to-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* MAIN HEADING */}
@@ -22,7 +22,7 @@ export default function Conta() {
 
               {/* CARD */}
               <div className="absolute bottom-0 w-full lg:p-10 p-5">
-                <div className="bg-gradient-to-b from-gray-900 via-black to-gray-900 rounded-xl p-6 w-full">
+                <div className="bg-linear-to-b from-gray-900 via-black to-gray-900 rounded-xl p-6 w-full">
                   
                   {/* PHONE */}
                   <div className="flex items-center mb-6">
@@ -31,7 +31,7 @@ export default function Conta() {
                     </svg>
                     
                     <p className="text-white text-base ml-4">
-                      <a href="tel:+44">+44 ----- ----- </a>
+                      <a href="tel:+44">+44 78422 52735</a>
 
                     </p>
                   </div>
@@ -66,7 +66,7 @@ export default function Conta() {
           </div>
 
           {/* FORM */}
-          <div className="order-1 lg:order-2 bg-gradient-to-b from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
+          <div className="order-1 lg:order-2 bg-linear-to-b from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
             
             <input className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
             

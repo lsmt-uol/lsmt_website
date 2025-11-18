@@ -6,7 +6,8 @@ const Sponsors = () => {
     
     const [fetchedLogoUrl, setFetchedLogoUrl] = useState(null); 
     const [fetchedVideoUrl, setFetchedVideoUrl] = useState(null); 
-    
+    const [PdfUrl, setPdfUrl] = useState("");
+
     const principalSponsor = {
         name: 'Link to the sponsors website', 
         storagePath: 'sponsors/noimage.jpg', 
@@ -14,6 +15,21 @@ const Sponsors = () => {
         websiteUrl: 'link', 
         description: "Description about our sponsor",
     };
+    const fetchPdf = async () => {
+        try {
+        // Path to your file in Firebase Storage
+        const storageRef = ref(storage, "/sponsors/LSMT_SPONSOR.pdf");
+
+        const url = await getDownloadURL(storageRef);
+        setPdfUrl(url);
+        } catch (error) {
+        console.error("Error fetching pdf:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchPdf();
+    }, []);
 
     useEffect(() => {
         const fetchUrls = async () => {
@@ -119,7 +135,7 @@ const Sponsors = () => {
                         We have different partnerships available.
                     </p>
                     <a 
-                        href="#" 
+                        href={PdfUrl}  download="LSMT_SPONSOR.pdf"
                         className="px-6 py-3 border-2 border-amber-400 text-amber-400 rounded-full font-medium hover:bg-sky-500 hover:border-sky-500 hover:text-white transition duration-300 tracking-wide"
                     >
                         Learn How to Become a Partner (brochure link)
