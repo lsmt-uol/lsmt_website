@@ -3,7 +3,7 @@ import { storage } from "../../config/firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 
 export default function AboutUs(){
-    const storageRef1 = ref(storage, `landing/hero.jpg`);
+    const storageRef1 = ref(storage, `landing/aboutus.jpg`);
     const [aboutImage, setAboutImage] = useState("");
     useEffect(() => {
         getDownloadURL(storageRef1).then((url) => {

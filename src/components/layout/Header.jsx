@@ -22,9 +22,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import logo from "../../assets/logo.jpg"
 import logo1 from "../../assets/logo.png"
-import hero from "../../assets/hero.jpg"
 
 const products = [
   { name: 'PALESTRA-1', description: 'RC Boat', href: '#', icon: ChartPieIcon },
