@@ -43,7 +43,7 @@ const Sponsors = () => {
 
     return (
     
-        <section className="min-h-screen bg-black text-white py-20 px-4 relative font-sans">
+        <section className="min-h-screen bg-black text-white py-18 px-4 relative font-sans">
             
 
             {fetchedVideoUrl && (
@@ -65,23 +65,20 @@ const Sponsors = () => {
 
             
             <div className="max-w-4xl mx-auto text-center relative z-10">
-                
-                <h1 className="text-4xl sm:text-5xl font-extrabold mb-12 tracking-tighter uppercase">
-                    Our Valued Partners
-                </h1>
-                
+                <h2 className="text-4xl font-bold text-[#3b82f5]">OUR VALUED PARTNERS</h2>
+                <div className="bg-white w-110 h-0.5 mx-auto my-2 mb-7"></div>
                 <div className="bg-transparent p-8 sm:p-12 rounded-xl shadow-2xl border border-white">
                     
                     <p className="text-sm font-normal uppercase tracking-widest mb-6">
-                        <span className="text-yellow-600">Bronze</span> 
-                        <span className="text-gray-200"> Silver</span>  
-                        <span className="text-yellow-500"> Gold</span> 
-                        <span className="text-white"> (for each sponsor we will just keep one of them)</span> 
+                        <span className="text-[#B87333] font-bold">Bronze</span> 
+                        <span className="text-gray-200 font-bold"> Silver</span>
+                        <span className="text-green-800 font-bold"> Jade</span> 
+                        {/* <span className="text-white"> (for each sponsor we will just keep one of them)</span>  */}
                     </p>
 
                     {fetchedLogoUrl ? (
                         <a
-                            href={principalSponsor.websiteUrl}
+                            href="https://www.bluemarinefoundation.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`Visit ${principalSponsor.name}'s website`}
@@ -100,11 +97,11 @@ const Sponsors = () => {
                     )}
                     
                     <p className="text-lg text-white font-light leading-relaxed mb-8">
-                        {principalSponsor.description}
+                        Blue Marine Foundation is a conservation charity founded in London in 2010. We work to protect and restore life in the ocean.
                     </p>
 
                     <a 
-                        href={principalSponsor.websiteUrl}
+                        href="https://www.bluemarinefoundation.com/"
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="inline-block px-8 py-3 text-base font-medium text-white border border-white rounded-lg hover:bg-white hover:text-black transition duration-300 tracking-wide"

@@ -38,7 +38,13 @@ export default function App() {
       <div ref={contactRef}><Conta/></div>
       {/* <div ref={contactRef}><Contactus /></div> */}
 
-      <Foo/>
+      <Foo
+      homeRef={homeRef}
+      aboutRef={aboutRef}
+      projectsref={projectsref}
+      ourTeamRef={ourTeamRef} 
+      sponsorsRef={sponsorsRef}
+      contactRef={contactRef}/>
       
       {/* <Footer /> */}
 

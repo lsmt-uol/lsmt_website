@@ -121,10 +121,11 @@ export default function OurTeam() {
   }, [members, activeDept]);
 
   return (
-    <section className="py-16 bg-linear-to-b from-gray-900 to-black">
+    <section className="py-26 bg-gradient-to-t from-gray-900 via-black to-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[#3b82f5]">Our Team</h1>
+          <h2 className="text-4xl font-bold text-[#3b82f5]">OUR TEAM</h2>
+          <div className="bg-white w-60 h-0.5 mx-auto my-2 "></div>
           <p className="text-gray-400 mt-2">
             Only with strong, inspiring, and creative minds can we keep coming up with new and inventive solutions.
           </p>
@@ -138,7 +139,7 @@ export default function OurTeam() {
               onClick={() => setActiveDept(d)}
               className={`px-4 py-2 rounded-full text-sm transition ${
                 activeDept === d
-                  ? "bg-cyan-500 text-black font-semibold"
+                  ? "bg-[#3b82f5] text-black font-semibold"
                   : "bg-gray-800 text-gray-300 hover:bg-gray-700"
               }`}
             >

@@ -89,15 +89,15 @@ export default function Landing({ homeRef, aboutRef, projectsref, ourTeamRef, sp
         <button
           onClick={scrollToTop}
           className="
-  fixed bottom-8 right-8
-  p-3 z-50
-  rounded-full
-  bg-black/50
-  backdrop-blur-md
-  hover:bg-black/70
-  shadow-[0_0_25px_rgba(255,255,255,0.4),0_0_12px_rgba(255,255,255,0.8)]
-  transition
-"
+          fixed bottom-8 right-8
+          p-3 z-50
+          rounded-full
+          bg-black/50
+          backdrop-blur-md
+          hover:bg-black/70
+          shadow-[0_0_25px_rgba(255,255,255,0.4),0_0_12px_rgba(255,255,255,0.8)]
+          transition
+        "
           aria-label="Scroll to Top"
         >
           <svg

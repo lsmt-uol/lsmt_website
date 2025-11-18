@@ -63,21 +63,22 @@ export default function Header({homeRef, aboutRef, projectsref, ourTeamRef, spon
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden items-center lg:flex lg:gap-x-12">
-          <button onClick={() => scrollTo(homeRef)}
-                className="text-white
+        <PopoverGroup className="hidden items-center lg:flex lg:gap-x-12 font-bold">
+
+          {/* <button  onClick={() => scrollTo(aboutRef)}
+               className="text-white
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
-                 hover:text-[#00a7f5]">
+                hover:bg-white hover:text-[#3b82f5]">
             HOME
-          </button>
+          </button> */}
           <button  onClick={() => scrollTo(aboutRef)}
                className="text-white
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
-                hover:bg-white hover:text-blue-600">
+                hover:bg-white hover:text-[#3b82f5]">
             ABOUT US
           </button>
           {/* <Popover className="relative">
@@ -120,7 +121,7 @@ export default function Header({homeRef, aboutRef, projectsref, ourTeamRef, spon
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
-                hover:bg-white hover:text-blue-600">
+                hover:bg-white hover:text-[#3b82f5]">
             PROJECTS
           </button>
           <button onClick={() => scrollTo(ourTeamRef)}
@@ -128,21 +129,21 @@ export default function Header({homeRef, aboutRef, projectsref, ourTeamRef, spon
                 text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
-                hover:bg-white hover:text-blue-600">
+                hover:bg-white hover:text-[#3b82f5]">
             OUR TEAM
           </button>
           <button onClick={() => scrollTo(sponsorsRef) }
                 className="text-white text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
-                hover:bg-white hover:text-blue-600">
+                hover:bg-white hover:text-[#3b82f5]">
             SPONSORS
           </button>
           <button onClick={() => scrollTo(contactRef) }
                 className="text-white text-sm sm:text-base md:text-base lg:text-lg
                 px-3 py-2 rounded-lg
                 transition-all duration-200
-                hover:bg-white hover:text-blue-600">
+                hover:bg-white hover:text-[#3b82f5]">
             CONTACT US
           </button>
         </PopoverGroup>
@@ -174,14 +175,14 @@ export default function Header({homeRef, aboutRef, projectsref, ourTeamRef, spon
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-white/10">
               <div className="space-y-2 py-6">
-                <button onClick={() => {
+                {/* <button onClick={() => {
                   scrollTo(homeRef);
                   setMobileMenuOpen(false);
                 } }
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                 >
                   HOME
-                </button>
+                </button> */}
                 <button onClick={() => {
                   scrollTo(aboutRef);
                   setMobileMenuOpen(false);
