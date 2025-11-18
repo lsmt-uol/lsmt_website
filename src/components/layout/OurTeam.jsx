@@ -158,18 +158,18 @@ export default function OurTeam() {
           <div className="text-center text-gray-400 py-20">No team members found.</div>
         ) : (
           <div
-  className="
-    grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6
-    overflow-y-auto
-    scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent
-    hover:scrollbar-thumb-gray-500
-  "
-  style={{
-    maxHeight: "650px",
-    paddingRight: "6px",
-    scrollbarWidth: "none" // Firefox
-  }}
->
+                className="
+                  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6
+                  overflow-y-auto
+                  scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent
+                  hover:scrollbar-thumb-gray-500
+                "
+                style={{
+                  maxHeight: "650px",
+                  paddingRight: "6px",
+                  scrollbarWidth: "none" // Firefox
+                }}>
+                  
             {filtered.map((member) => (
               <TeamCard
                 key={member.id}
