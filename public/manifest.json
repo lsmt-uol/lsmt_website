@@ -1,0 +1,31 @@
+{
+  "name": "Leeds Sustainable Marine Team",
+  "short_name": "LSMT",
+  "description": "A multidisciplinary team from the University of Leeds developing sustainable marine technology and competing in the Monaco Energy Boat Challenge.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#004c97",
+  "icons": [
+    {
+      "src": "/icons/lsmt-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/lsmt-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/lsmt-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

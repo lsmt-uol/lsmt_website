@@ -55,7 +55,7 @@ export default function Conta() {
                     </svg>
                     <p className="text-white text-base ml-4 break-all">
                       <a href="https://maps.app.goo.gl/oAVNFS6jgtKcCtk87" target="_blank">
-                      Leeds University, Leeds, LS3 1LN
+                      University of Leeds, Leeds, LS3 1LN
                       </a>
                     </p>
                   </div>
@@ -68,11 +68,11 @@ export default function Conta() {
           {/* FORM */}
           <div className="order-1 lg:order-2 bg-linear-to-b from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
             
-            <input className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
+            <input id="name" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
             
-            <input className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Email"/>
+            <input id="email" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Email"/>
             
-            <input className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Phone"/>
+            <input id="phone" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Phone"/>
 
             <textarea className="w-full h-28 bg-transparent border border-gray-500 rounded-2xl p-4 text-white mb-8 placeholder-gray-400 resize-none" placeholder="Message"/>
 
