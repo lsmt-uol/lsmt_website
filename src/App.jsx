@@ -31,7 +31,6 @@ export default function App() {
       <div ref={ourTeamRef}><OurTeam /></div>
       {/* <div ref={sponsorsRef}><Sponsors /></div> */}
       <div ref={contactRef}><Conta/></div>
-      {/* <div ref={contactRef}><Contactus /></div> */}
 
       <Foo
       homeRef={homeRef}
@@ -41,7 +40,6 @@ export default function App() {
       sponsorsRef={sponsorsRef}
       contactRef={contactRef}/>
       
-      {/* <Footer /> */}
 
       </>
     </div>
