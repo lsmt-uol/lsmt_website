@@ -1,10 +1,21 @@
 import emailjs from "@emailjs/browser"
-import { useRef,useState } from 'react';
+import { useRef,useState, useEffect } from 'react';
+import contactus from "../../assets/contactus.jpg";
+import { getDownloadURL, ref } from "firebase/storage";
+import { storage } from "../../config/firebase";
 
 export default function ContactUs() {
   const form = useRef();
   const [statusMessage, setStatusMessage] = useState("");
   const [statusType, setStatusType] = useState("");
+  const storageRef2 = ref(storage, `contactus/contactus.jpg`);
+  const [contactImage, setContactImage] = useState("");
+    
+  useEffect(() => {
+      getDownloadURL(storageRef2).then((url) => {
+          setContactImage(url);
+            });
+        }, []);
   
   const sendEmail = (e) => {
     e.preventDefault();
@@ -44,7 +55,7 @@ export default function ContactUs() {
           <div className="order-2 lg:order-1">
             <div className="relative w-full h-full">
               <img
-                src="https://yacht-club-monaco.mc/wp-content/uploads/2024/10/MEBC240705ff_05718_.jpg"
+                src={contactus || contactImage}
                 className="w-full h-full object-cover lg:rounded-l-2xl rounded-2xl opacity-80"
                 alt="Contact Us"
               />
