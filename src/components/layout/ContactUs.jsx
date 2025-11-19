@@ -1,9 +1,11 @@
 import emailjs from "@emailjs/browser"
-import { useRef } from 'react';
+import { useRef,useState } from 'react';
 
 export default function ContactUs() {
   const form = useRef();
-
+  const [statusMessage, setStatusMessage] = useState("");
+  const [statusType, setStatusType] = useState("");
+  
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -12,12 +14,18 @@ export default function ContactUs() {
     import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
     form.current,
     import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
-  ).then(
+  )
+  .then(
         () => {
-          console.log('SUCCESS!');
+          // console.log('SUCCESS!');
+          form.current.reset();
+          setStatusType("success");
+          setStatusMessage("Your message has been sent!"); 
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          // console.log('FAILED...', error.text);
+          setStatusType("error");
+          setStatusMessage("Something went wrong. Please try again.");
         },
       );
   };
@@ -88,6 +96,17 @@ export default function ContactUs() {
 
           {/* FORM */}
           <div className="order-1 lg:order-2 bg-linear-to-b from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
+            {statusMessage && (
+              <p
+                className={
+                  statusType === "success"
+                    ? "text-green-400 mb-4"
+                    : "text-red-400 mb-4"
+                }
+              >
+                {statusMessage}
+              </p>
+            )}
             <form ref={form} onSubmit={sendEmail}>
               <input type="text" name="name" required className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
               
