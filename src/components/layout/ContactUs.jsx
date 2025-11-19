@@ -85,7 +85,7 @@ export default function ContactUs() {
                     </svg>
                     <p className="text-white text-base ml-4 break-all">
                       <a href="https://maps.app.goo.gl/oAVNFS6jgtKcCtk87" target="_blank">
-                      University of Leeds, Leeds, LS3 1LN
+                      University of Leeds, Woodhouse Lane, Leeds, LS2 9JT
                       </a>
                     </p>
                   </div>
