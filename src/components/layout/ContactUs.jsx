@@ -1,4 +1,26 @@
+import emailjs from "@emailjs/browser"
+import { useRef } from 'react';
+
 export default function ContactUs() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+  emailjs.sendForm(
+    import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+    import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+    form.current,
+    import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+  ).then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
   return (
     <section className="py-18 bg-linear-to-t from-gray-900 via-black to-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -59,7 +81,6 @@ export default function ContactUs() {
                       </a>
                     </p>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -67,18 +88,20 @@ export default function ContactUs() {
 
           {/* FORM */}
           <div className="order-1 lg:order-2 bg-linear-to-b from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
-            
-            <input id="name" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
-            
-            <input id="email" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Email"/>
-            
-            <input id="phone" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Phone"/>
+            <form ref={form} onSubmit={sendEmail}>
+              <input type="text" name="name" required className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
+              
+              <input type="email" name="email" required className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Email"/>
+              
+              <input type="text" name="subject" required className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Subject"/>
 
-            <textarea className="w-full h-28 bg-transparent border border-gray-500 rounded-2xl p-4 text-white mb-8 placeholder-gray-400 resize-none" placeholder="Message"/>
+              <textarea required name="message" className="w-full h-28 bg-transparent border border-gray-500 rounded-2xl p-4 text-white mb-8 placeholder-gray-400 resize-none" placeholder="Message"/>
 
-            <button className="w-full h-12 bg-[#3b82f5] hover:bg-blue-700 rounded-full text-white font-semibold transition">
-              Send Message
-            </button>
+              <button type="submit" value="send" className="w-full h-12 bg-[#3b82f5] hover:bg-blue-700 rounded-full text-white font-semibold transition">
+                Send Message
+              </button>
+            </form> 
+
           </div>
 
         </div>
