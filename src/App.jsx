@@ -35,7 +35,7 @@ export default function App() {
       {/* <div ref={sponsorsRef}><Sponsors /></div> */}
       
       {/* 3. Add the Brochure component back into the layout */}
-      <div ref={brochureRef}><Brochure/></div> 
+      <div ref={sponsorsRef}><Brochure/></div> 
    
       <div ref={contactRef}><ContactUs/></div>
 
