@@ -47,20 +47,18 @@ export default function Brochure() {
             
             <div className="flex flex-col items-center justify-center p-4 w-full max-w-7xl">
                 
-                {/* Section Title */}
                 <h2 className="text-4xl font-bold text-[#3b82f5] text-center uppercase">
                     Our Brochure
                 </h2>
                 <div className="bg-white w-70 h-0.5 mx-auto my-2 mb-12"></div>
                 
-                {/* Button Container */}
                 <div className="flex flex-col items-center justify-center w-full max-w-sm">
                     <a 
                         href={downloadUrl || "#"} 
-                        // Removed 'download' attribute
+                
                         onClick={isButtonDisabled ? (e) => e.preventDefault() : undefined} 
-                        target="_blank" // Opens the link in a new tab
-                        rel="noopener noreferrer" // Security best practice
+                        target="_blank"
+                        rel="noopener noreferrer"
                         
                         className={`
                             w-full 
