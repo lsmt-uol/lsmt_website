@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
-const BROCHURE_FILE_PATH = "brochure/LSMT partnership brochure.pdf"; 
+const BROCHURE_FILE_PATH = "brochure/LSMT partnership brochure.pdf";
 
 const useBrochureLink = () => {
     const [downloadUrl, setDownloadUrl] = useState(null);

@@ -1,4 +1,45 @@
+import emailjs from "@emailjs/browser"
+import { useRef,useState, useEffect } from 'react';
+import contactus from "../../assets/contactus.jpg";
+import { getDownloadURL, ref } from "firebase/storage";
+import { storage } from "../../config/firebase";
+
 export default function ContactUs() {
+  const form = useRef();
+  const [statusMessage, setStatusMessage] = useState("");
+  const [statusType, setStatusType] = useState("");
+  const storageRef2 = ref(storage, `contactus/contactus.jpg`);
+  const [contactImage, setContactImage] = useState("");
+    
+  useEffect(() => {
+      getDownloadURL(storageRef2).then((url) => {
+          setContactImage(url);
+            });
+        }, []);
+  
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+  emailjs.sendForm(
+    import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+    import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+    form.current,
+    import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+  )
+  .then(
+        () => {
+          // console.log('SUCCESS!');
+          form.current.reset();
+          setStatusType("success");
+          setStatusMessage("Your message has been sent!"); 
+        },
+        (error) => {
+          // console.log('FAILED...', error.text);
+          setStatusType("error");
+          setStatusMessage("Something went wrong. Please try again.");
+        },
+      );
+  };
   return (
     <section className="py-18 bg-linear-to-t from-gray-900 via-black to-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -14,7 +55,7 @@ export default function ContactUs() {
           <div className="order-2 lg:order-1">
             <div className="relative w-full h-full">
               <img
-                src="https://yacht-club-monaco.mc/wp-content/uploads/2024/10/MEBC240705ff_05718_.jpg"
+                src={contactus || contactImage}
                 className="w-full h-full object-cover lg:rounded-l-2xl rounded-2xl opacity-80"
                 alt="Contact Us"
               />
@@ -55,11 +96,10 @@ export default function ContactUs() {
                     </svg>
                     <p className="text-white text-base ml-4 break-all">
                       <a href="https://maps.app.goo.gl/oAVNFS6jgtKcCtk87" target="_blank">
-                      University of Leeds, Leeds, LS3 1LN
+                      University of Leeds, Woodhouse Lane, Leeds, LS2 9JT
                       </a>
                     </p>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -67,18 +107,31 @@ export default function ContactUs() {
 
           {/* FORM */}
           <div className="order-1 lg:order-2 bg-linear-to-b from-black to-gray-900 p-6 lg:p-10 rounded-2xl lg:rounded-l-2xl lg:rounded-r-2xl">
-            
-            <input id="name" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
-            
-            <input id="email" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Email"/>
-            
-            <input id="phone" className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Phone"/>
+            {statusMessage && (
+              <p
+                className={
+                  statusType === "success"
+                    ? "text-green-400 mb-4"
+                    : "text-red-400 mb-4"
+                }
+              >
+                {statusMessage}
+              </p>
+            )}
+            <form ref={form} onSubmit={sendEmail}>
+              <input type="text" name="name" required className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Name"/>
+              
+              <input type="email" name="email" required className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Email"/>
+              
+              <input type="text" name="subject" required className="w-full h-12 bg-transparent border border-gray-500 rounded-full pl-4 text-white mb-6 placeholder-gray-400" placeholder="Subject"/>
 
-            <textarea className="w-full h-28 bg-transparent border border-gray-500 rounded-2xl p-4 text-white mb-8 placeholder-gray-400 resize-none" placeholder="Message"/>
+              <textarea required name="message" className="w-full h-28 bg-transparent border border-gray-500 rounded-2xl p-4 text-white mb-8 placeholder-gray-400 resize-none" placeholder="Message"/>
 
-            <button className="w-full h-12 bg-[#3b82f5] hover:bg-blue-700 rounded-full text-white font-semibold transition">
-              Send Message
-            </button>
+              <button type="submit" value="send" className="w-full h-12 bg-[#3b82f5] hover:bg-blue-700 rounded-full text-white font-semibold transition">
+                Send Message
+              </button>
+            </form> 
+
           </div>
 
         </div>
