@@ -84,7 +84,7 @@ export default function ContactUs() {
                       <path d="M12.5 25h5c4.7 0 7 0 8.5-1.5S27.5 19.7 27.5 15c0-4.7 0-7-1.5-8.5S22.2 5 17.5 5h-5C7.8 5 5.4 5 3.9 6.5S2.5 10.3 2.5 15c0 4.7 0 7 1.4 8.5C5.4 25 7.8 25 12.5 25z"/>
                     </svg>
                     <p className="text-white text-base ml-4 break-all">
-                      <a href="mailto:leedssustainablemarineteam@gmail.com">leedssustainablemarineteam@gmail.com</a> 
+                      <a href="mailto:leedssustainablemarineteam">leedssustainablemarineteam@gmail.com</a> 
                     </p>
                   </div>
 
@@ -93,6 +93,7 @@ export default function ContactUs() {
                     <svg width="26" height="26" fill="none" stroke="#3b82f5" strokeWidth="2" viewBox="0 0 30 30">
                       <path d="M25 12.9c0 4.8-3.8 8.7-6.7 12-1.4 1.7-2.1 2.5-3.3 2.5-1.2 0-2-0.8-3.4-2.5C8.8 21.6 5 17.7 5 12.9 5 10.2 6 7.5 7.9 5.6 9.8 3.6 12.3 2.5 15 2.5c2.7 0 5.2 1.1 7.1 3.1 1.9 1.9 2.9 4.6 2.9 7.3z"/>
                       <circle cx="15" cy="11.6" r="2.9"/>
+                      
                     </svg>
                     <p className="text-white text-base ml-4 break-all">
                       <a href="https://maps.app.goo.gl/oAVNFS6jgtKcCtk87" target="_blank">
