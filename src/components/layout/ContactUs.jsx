@@ -21,10 +21,10 @@ export default function ContactUs() {
     e.preventDefault();
 
   emailjs.sendForm(
-    import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
-    import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+    'service_l8fzzrr',
+    'template_qt964j7',
     form.current,
-    import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+    'x0EAyDSXDAQtKXDot'
   )
   .then(
         () => {
